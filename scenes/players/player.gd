@@ -95,11 +95,11 @@ func _process(delta):
 
 
 func _handle_camera(delta):
-	var cam_mod: float
-	if Globals.look_ups.has(true) and camera_modifier < 0:
-		cam_mod = camera_modifier
-	elif Globals.look_downs.has(true) and camera_modifier > 0:
-		cam_mod = camera_modifier
+	 var cam_mod: float = 0.0
+        if Globals.look_ups.has(true) and camera_modifier < 0:
+                cam_mod = camera_modifier
+        elif Globals.look_downs.has(true) and camera_modifier > 0:
+                cam_mod = camera_modifier
 	
 	if !Globals.vertical_locks.is_empty():
 		camera.global_position.y = Globals.vertical_locks.back() + cam_mod
